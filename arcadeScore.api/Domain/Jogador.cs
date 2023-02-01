@@ -10,5 +10,9 @@ public class Jogador
     }
 
     public string Id { get; set; }
+    public int PartidasJogadas { get => Partidas.Count(); }
+    public int PontuacaoMedia { get => Partidas.Sum(p => p.Pontuacao) / Partidas.Count; }
+    public int MaiorPontuacao { get => Partidas.Max(p => p.Pontuacao); }
+    public int MenorPontuacao { get => Partidas.Min(p => p.Pontuacao); }
     public List<Partida> Partidas { get; set; }
 }
