@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "nQAR08Q4FDI007NvYsIoQ2M0kUU6DvBqlOrnR1pDr5o=",
+  "Source": "arcadeScore.api",
+  "BasePath": "_content/arcadeScore.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
