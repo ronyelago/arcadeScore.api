@@ -14,13 +14,13 @@ public class PontuacaoService
         _jogadorRepository = jogadorRepository;
     }
 
-    public void RegistrarPontuacao(Partida partida, string jogadorId)
+    public void RegistrarPontuacao(Partida partida)
     {
-        var jogador = _jogadorRepository.GetById(j => j.Id == jogadorId);
+        var jogador = _jogadorRepository.GetById(j => j.Id.ToLower() == partida.JogadorId.ToLower());
 
         if (jogador == null)
         {
-            jogador = new Jogador(jogadorId);
+            jogador = new Jogador(partida.JogadorId);
             _jogadorRepository.Save(jogador);
         }
 

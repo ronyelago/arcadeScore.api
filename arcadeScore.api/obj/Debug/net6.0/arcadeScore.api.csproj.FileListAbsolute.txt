@@ -33,3 +33,4 @@
 /home/ronye/Documents/sources/arcade-score-api/arcadeScore.api/obj/Debug/net6.0/arcadeScore.api.pdb
 /home/ronye/Documents/sources/arcade-score-api/arcadeScore.api/obj/Debug/net6.0/arcadeScore.api.genruntimeconfig.cache
 /home/ronye/Documents/sources/arcade-score-api/arcadeScore.api/obj/Debug/net6.0/ref/arcadeScore.api.dll
+/home/ronye/Documents/sources/arcade-score-api/arcadeScore.api/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
