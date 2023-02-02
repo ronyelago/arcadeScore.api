@@ -32,27 +32,23 @@ public class PartidaController : ControllerBase
     [HttpGet("ObterJogador/{jogadorId}")]
     public IActionResult Get(string jogadorId)
     {
-        return Ok(_jogadorRepository.GetById(x => x.Id == jogadorId));
+        return Ok(_jogadorRepository.GetById(x => x.Id.ToUpper() == jogadorId.ToUpper()));
     }
 
     [HttpPost("RegistrarPontuacao")]
     public IActionResult Post([FromBody] RegistrarPontuacao viewModel)
     {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+        
         try
         {
-            Partida partidaMap = new Partida
-            {
-                Pontuacao = viewModel.Pontuacao,
-                DataPartida = viewModel.DataPartida,
-                JogadorId = viewModel.JogadorId
-            };
-            _pontuacaoService.RegistrarPontuacao(partidaMap, viewModel.JogadorId);
-
-            return Created("RegistrarPontuacao", null);
+            // _pontuacaoService.RegistrarPontuacao()
+            return StatusCode(StatusCodes.Status201Created);
         }
         catch(Exception ex)
         {
-            return BadRequest(new { Message = ex.Message, InnerExceptionMessage = ex.InnerException?.Message});
+            return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
         }
     }
 }
