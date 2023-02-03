@@ -8,6 +8,8 @@ public class PartidaProfile : Profile
 {
     public PartidaProfile()
     {
-        CreateMap<RegistrarPontuacao, Partida>().ReverseMap();
+        CreateMap<RegistrarPontuacao, Partida>()
+            .ForMember(dest => dest.JogadorId, opt => opt .MapFrom(src => src.JogadorId .ToUpper()) )
+            .ReverseMap();
     }
 }
