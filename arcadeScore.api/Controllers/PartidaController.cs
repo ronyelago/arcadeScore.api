@@ -33,7 +33,9 @@ public class PartidaController : ControllerBase
     [HttpGet("GerarRanking")]
     public IActionResult Get()
     {
-        return Ok(_rankingService.GerarRanking());
+        var rankingList = _mapper.Map<List<Ranking>>(_rankingService.GerarRanking());
+
+        return Ok(rankingList);
     }
 
     [HttpGet("ObterJogador/{jogadorId}")]
