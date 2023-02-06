@@ -20,6 +20,7 @@ public class JogadorRepository : IRepositoryBase<Jogador>
     public Jogador GetById(Func<Jogador, bool> predicate)
     {
         Jogador jogador = FakeDatabase.Jogadores.FirstOrDefault(predicate);
+        jogador.Partidas = FakeDatabase.Partidas.Where(p => p.JogadorId == jogador.Id).ToList();
 
         return jogador;
     }
